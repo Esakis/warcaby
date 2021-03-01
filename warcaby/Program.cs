@@ -8,8 +8,10 @@ namespace warcaby
     {
         static void Main(string[] args)
         {
-            Static.Menu.PrintMenu();
-            DataManager.ChooseKey.InputKey();
+
+            
+            Static.Menu.PrintMain();
+
         }
     }
 }
