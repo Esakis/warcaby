@@ -4,11 +4,12 @@ using System.Text;
 
 namespace warcaby.DataManager
 {
-    class ChooseSizeOfBoard
+    public class ChooseSizeOfBoard
     {
-        public static void SizeBoard()
+        public static void SizeOfBoard()
         {
-
+            Console.WriteLine("W budowie");
+            Static.Menu.PrintMain();
         }
     }
 }

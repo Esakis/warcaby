@@ -53,7 +53,7 @@ namespace warcaby.Static
             }
         }
 
-       static void Option()
+        static void Option()
         {
             do
             {
@@ -80,22 +80,33 @@ namespace warcaby.Static
             while (true);
         }
 
-       static void Mainchoose()
+        static void Mainchoose()
         {
-            switch(actPosMenu)
+            switch (actPosMenu)
             {
                 case 0:
                     Console.Clear();
-                    Static.Board.MakeBoard();
-                    DataManager.FunctionPawnMove.Game();
+                    DataManager.Game d = new DataManager.Game();
+                    d.PrintBoard();
+                    while (true)
+                    {
+                        Console.Write(Environment.NewLine);
+                        Console.Write("      Make move: ");
+                        string move = Console.ReadLine();
+                        if (move.Length != 5)
+                            continue;
+                        d.turn(move.Substring(0, 2), move.Substring(3, 2));
+                        d.PrintBoard();
+                    }
                     break;
+
                 case 1:
                     Console.Clear();
-                    Static.Board.MakeBoard();
+
                     break;
                 case 2:
                     Console.Clear();
-                    DataManager.ChooseSizeOfBoard.SizeBoard();
+                    DataManager.ChooseSizeOfBoard.SizeOfBoard();
                     break;
                 case 3:
                     Console.Clear();
